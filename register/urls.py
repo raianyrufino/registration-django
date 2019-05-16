@@ -22,4 +22,5 @@ urlpatterns = [
   	path('', index),
   	path('perfis/', exibir)
     
+    #path('perfis/<int:perfil_id>', exibir)
 ]
