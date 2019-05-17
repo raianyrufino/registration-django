@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
   	path('', index),
   	# path('perfis/', exibir)
-    path('perfis/<int:perfil_id>', exibir)
     
+    path('perfis/<int:perfil_id>', exibir)
 ]
