@@ -14,4 +14,4 @@ def exibir(request, perfil_id):
 	if perfil_id == '1':
 		perfil == Perfil('Teste', 'teste@teste.com', '487383', 'amazon')
 	
-	return render(request, 'perfis.html')
+	return render(request, 'perfis.html', {"perfil" : perfil})

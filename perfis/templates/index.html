@@ -9,7 +9,9 @@
 		{% if perfis %}
 		<ul>
 			{% for perfil in perfis %}
-			<li>{{ perfil.nome }} / {{perfil.email}} </li>
+			<li>
+				<a href="{% url 'exibir' perfil.id %}">{{ perfil.nome }}</a> / {{ perfil.email }}
+			</li>
 			{% endfor %}
 		</ul>
 		{% else %}

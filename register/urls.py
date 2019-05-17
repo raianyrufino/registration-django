@@ -19,8 +19,8 @@ from perfis.views import index, exibir
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-  	path('', index),
+  	path('', index, name='index'),
   	
     # path('perfis/', exibir)
-    path('perfis/<int:perfil_id>', exibir)
+    path('perfis/<int:perfil_id>', exibir, name='exibir')
 ]
