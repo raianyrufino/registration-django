@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from perfis.views import index, exibir
+from perfis.views import index, exibir, convidar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
   	path('', index, name='index'),
   	
     # path('perfis/', exibir)
-    path('perfis/<int:perfil_id>', exibir, name='exibir')
+    path('perfis/<int:perfil_id>', exibir, name='exibir'),
+    path('perfis/<int:perfil_id>/convidar', convidar, name='convidar')
 ]
