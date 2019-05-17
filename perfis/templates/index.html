@@ -2,9 +2,18 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>ConnectedIn</title>
 	</head>
 	<body>
-		<H1>Bem vindo a pagina</H1>
+		<h1>Bem vindo ao ConnectedIn</h1>
+		{% if perfis %}
+		<ul>
+			{% for perfil in perfis %}
+			<li>{{ perfil.nome }} / {{perfil.email}} </li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p>Nenhum Perfil encontrado</p>
+		{% endif %}
 	</body>
 </html>

@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from perfis.models import Perfil
 
 def index(request):
-	return render(request, "index.html")
+	return render(request, "index.html", {'perfis': Perfil.objects.all()})
 # Create your views here.
 
 def exibir(request, perfil_id):
