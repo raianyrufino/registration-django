@@ -6,12 +6,12 @@ def index(request):
 	return render(request, "index.html")
 # Create your views here.
 
-def exibir(request):
+def exibir(request, perfil_id):
 
-	perfil = Perfil()
+	perfil = Perfil.objects.get(id = perfil_id)
 	#quando ajeitar colocar Perfil.objects.get(id = perfil_id)
 
-	# if perfil_id == '1':
-	#	perfil == Perfil('Teste', 'teste@teste.com', '487383', 'amazon')
+	if perfil_id == '1':
+		perfil == Perfil('Teste', 'teste@teste.com', '487383', 'amazon')
 	
 	return render(request, 'perfis.html')

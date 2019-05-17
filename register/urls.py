@@ -20,6 +20,7 @@ from perfis.views import index, exibir
 urlpatterns = [
     path('admin/', admin.site.urls),
   	path('', index),
-  	path('perfis/', exibir)
+  	# path('perfis/', exibir)
+    path('perfis/<int:perfil_id>', exibir)
     
 ]
