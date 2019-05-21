@@ -13,16 +13,31 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
-from perfis.views import index, exibir, convidar, aceitar
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-  	path('', index, name='index'),
-  	
-    # path('perfis/', exibir)
-    path('perfis/<int:perfil_id>', exibir, name='exibir'),
-    path('perfis/<int:perfil_id>/convidar', convidar, name='convidar'),
-    path('perfis/<int:convite_id>/aceitar', aceitar, name='aceitar')
+    path('perfis/', include('perfis.urls')),
+    path('usuarios/', include('usuarios.urls'))
 ]
+
+"""
+from django.contrib import admin
+from django.urls import path, include   
+from home.views import HomePage, CreateCanil
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', HomePage.as_view(), name="home_page"), 
+    path('login/', include('login.urls')),
+    path('dashboard/', include('dashboard.urls')),
+    path('criar_canil/', CreateCanil.as_view(), name="create_canil"),
+    path('salvar_canil/', CreateCanil.as_view(), name="salvar_canil"),
+
+    # 127.0.0.1:8000/,pagina raiz, vai chamar a classe HomePage, ativa essa função
+]
+"""
